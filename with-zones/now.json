@@ -1,0 +1,14 @@
+{
+  "name": "with-zones",
+  "version": 2,
+  "builds": [
+    { "src": "home/next.config.js", "use": "@now/next" },
+    { "src": "resumes/next.config.js", "use": "@now/next" },
+    { "src": "company/next.config.js", "use": "@now/next" }
+  ],
+  "routes": [
+    { "src": "/companies", "dest": "company/$1" },
+    { "src": "/resumes", "dest": "resumes/$1" },
+    { "src": "(.*)", "dest": "home$1" }
+  ]
+}
