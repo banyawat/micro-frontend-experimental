@@ -7,7 +7,16 @@ export default () => (
   <div>
     <Header />
     <p>This is our homepage</p>
-    <div>
+    <div style={{
+      display: 'flex',
+      flexDirection: 'column'
+    }}>
+      <Link href='/company'>
+        <a>See companies</a>
+      </Link>
+      <Link href='/resume'>
+        <a>See resumes</a>
+      </Link>
       <Link href='/about'>
         <a>About us</a>
       </Link>
