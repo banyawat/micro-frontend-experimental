@@ -7,7 +7,7 @@ const reactLifecycles = singleSpaReact({
     React,
     ReactDOM,
     rootComponent,
-    domElementGetter: () => document.getElementById('resume-app')
+    domElementGetter: () => document.getElementById('company-app')
 });
 
 export const bootstrap = [
