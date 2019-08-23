@@ -51,13 +51,13 @@ class App extends Component {
                             <div>
                                 <MenuItem pathname={pathname} link='/'>All applications</MenuItem>
                                 <MenuItem pathname={pathname} link='/resume'>React 16 application</MenuItem>
-                                <MenuItem pathname={pathname} link='/angular'>Angular 5 application</MenuItem>
+                                <MenuItem pathname={pathname} link='/company'>Angular 5 application</MenuItem>
                             </div>
                         )}
                     </Menu>
                     <div className="App-container">
                         <div id="resume-app"/>
-                        <div id="angular-app"/>
+                        <div id="company-app"/>
                     </div>
                 </div>
             </div>
