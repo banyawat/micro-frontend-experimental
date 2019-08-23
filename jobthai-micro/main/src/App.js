@@ -43,15 +43,15 @@ class App extends Component {
             <div className="App">
                 <header className="App-header">
                     <img src={logo} className="App-logo" alt="logo"/>
-                    <h1 className="App-title">Welcome to React 15 Portal</h1>
+                    <h1 className="App-title">Welcome to Jobthai Upgrade</h1>
                 </header>
                 <div className="App-content">
                     <Menu>
                         {(pathname) => (
                             <div>
                                 <MenuItem pathname={pathname} link='/'>All applications</MenuItem>
-                                <MenuItem pathname={pathname} link='/resume'>React 16 application</MenuItem>
-                                <MenuItem pathname={pathname} link='/company'>Angular 5 application</MenuItem>
+                                <MenuItem pathname={pathname} link='/resume'>Resume</MenuItem>
+                                <MenuItem pathname={pathname} link='/company'>Company</MenuItem>
                             </div>
                         )}
                     </Menu>
