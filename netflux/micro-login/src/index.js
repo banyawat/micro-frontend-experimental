@@ -14,7 +14,9 @@ class XSearch extends HTMLElement {
   }
 
   mount() {
-    render(<LoginComponent/>, this);
+    const name = this.getAttribute('name');
+
+    render(<LoginComponent name={name}/>, this);
   }
 
   unmount() {
