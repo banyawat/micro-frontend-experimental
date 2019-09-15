@@ -1,6 +1,6 @@
 // Imports: Dependencies
 const path = require('path');
-require("@babel/register");
+// require("@babel/register");
 // Webpack Configuration
 const config = {
   

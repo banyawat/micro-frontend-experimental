@@ -1,6 +1,8 @@
 import * as React from 'react';
 import { render, unmountComponentAtNode } from 'react-dom';
 
+import LoginComponent from './Login'
+
 class XSearch extends HTMLElement {
   connectedCallback() {
     this._innerHTML = this.innerHTML;
@@ -12,12 +14,9 @@ class XSearch extends HTMLElement {
   }
 
   mount() {
-    const mountPoint = document.createElement('span');
-    this.attachShadow({ mode: 'open' }).appendChild(mountPoint);
-
     const name = this.getAttribute('name');
-    const url = 'https://www.google.com/search?q=' + encodeURIComponent(name);
-    render(<a href={url}>{name}</a>, mountPoint);
+
+    render(<LoginComponent name={name}/>, this);
   }
 
   unmount() {
