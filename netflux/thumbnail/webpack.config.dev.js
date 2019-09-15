@@ -3,9 +3,7 @@ const defaultConfig = require('./default.config')
 
 module.exports = {
   entry: './src/app.js',
-  module: {
-    ...defaultConfig,
-  },
+  module: defaultConfig,
   plugins: [
     new webpack.HotModuleReplacementPlugin()
   ],

@@ -9,7 +9,16 @@ const configModule = {
     },
     {
       test: /\.css$/,
-      use: ['style-loader', 'css-loader'],
+      loaders: [
+        {
+          loader: 'style-loader'
+        }, 
+        {
+          loader: 'css-loader',
+          options: {
+            import: true
+          }
+        }],
     }
   ]
 }
