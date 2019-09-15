@@ -1,0 +1,18 @@
+version: '3.1'
+
+services:
+    micrp-fe-react:
+        image: registry.thinknet.co.th/sredev/node:10.15
+        command: ['/bin/sh', '-c', 'yarn && yarn start']
+        environment:
+                NODE_ENV: local
+                NODE_PORT: 5002
+        ports:
+            - 5002:5002
+        volumes:
+            - .:/usr/src/app
+            
+networks:
+    default:
+        external:
+            name: microservicenetwork
