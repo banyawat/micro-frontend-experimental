@@ -1,7 +1,4 @@
-const webpack = require('webpack')
-
 module.exports = {
-  entry: './src/app.js',
   module: {
     rules: [
       {
@@ -16,19 +13,5 @@ module.exports = {
         use: ['style-loader', 'css-loader'],
       }
     ]
-  },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin()
-  ],
-  resolve: {
-    extensions: ['*', '.js', '.jsx']
-  },
-  output: {
-    path: __dirname + '/dist',
-    publicPath: '/',
-    filename: 'bundle.js'
-  },
-  devServer: {
-    contentBase: './dist'
   }
 };
