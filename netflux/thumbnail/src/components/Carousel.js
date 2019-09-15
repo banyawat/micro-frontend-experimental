@@ -1,25 +1,30 @@
 import React from 'react'
-import Slider from 'react-slick'
+import { Carousel } from 'antd'
+import Arrow from './Arrow'
 
-const settings = {
-  dots: false,
-  infinite: true,
-  speed: 500,
-  arrows: true,
-  slidesToShow: 4,
-  className: 'carousel-item'
-}
-
-const Carousel = ({ content }) => (
-  <Slider {...settings}>
-    {
-      content.map(item => (
-        <div>
-          <img src={item.url} alt=""></img>
-        </div>
-      ))
-    }
-  </Slider>
+const CustomCarousel = ({ content }) => (
+  <div>
+    <Arrow
+      direction="left"
+    />
+    <Carousel 
+      dots={false}
+      infinite
+      slidesToShow={5}
+      className="carousel-item"
+    >
+      {
+        content.map(item => (
+          <div>
+            <img src={item.url} alt=""></img>
+          </div>
+        ))
+      }
+    </Carousel>
+    <Arrow 
+      direction="right" 
+    />
+  </div>
 )
 
-export default Carousel
+export default CustomCarousel

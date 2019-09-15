@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "add": "^2.0.6",
+    "antd": "^3.23.2",
     "css-loader": "^3.2.0",
     "react-scripts": "3.0.0",
     "react-slick": "^0.25.2",
