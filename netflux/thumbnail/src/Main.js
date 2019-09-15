@@ -1,8 +1,9 @@
 import React from 'react'
+import './styles/index.css'
 import 'antd/dist/antd.min.css'
 import THUMB_DATA from './mock/thumb'
 import Carousel from './components/Carousel'
-import { Button } from 'antd'
+
 
 
 const Main = () => {

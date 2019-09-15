@@ -1,11 +1,19 @@
 import React from 'react'
+import { Icon } from 'antd'
 
-const Arrow = ({ direction }) => (
-  <div>
+const Arrow = ({
+  className,
+  direction, 
+  onClick = () => {}
+}) => (
+  <button 
+    onClick={onClick}
+    className={`carousel-arrow ${className}`}
+  >
     <span>
-      { (direction === 'right') ? '>' : '<' }
+      { (direction === 'right') ? <Icon type="right" /> : <Icon type="left" /> }
     </span>
-  </div>
+  </button>
 )
 
 export default Arrow
