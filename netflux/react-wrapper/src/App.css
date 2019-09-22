@@ -1,9 +1,14 @@
+.main-layout {
+  background: #141414;
+  min-height: 100vh;
+}
+
 .navbar {
-  height: 35px;
+  height: 75px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 25px;
+  padding: 25px 60px;
   background: #000;
   color: #fff;
 }
