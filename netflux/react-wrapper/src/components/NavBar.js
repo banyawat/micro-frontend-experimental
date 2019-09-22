@@ -1,13 +1,33 @@
 import React from 'react'
+import { withRouter } from 'react-router-dom'
 
 class Navbar extends React.Component {
-  state = {}
+  state = {
+    tokenDetail: ''
+  }
 
-  componentDidMount = () => {
-    const tokenDetail = localStorage.getItem('tokenDetail')
-    this.setState({
-      tokenDetail
+  componentDidMount () {
+    this.props.history.listen(() => {
+      this.checkSession()
     })
+  }
+
+  checkSession = () => {
+    const tokenDetail = localStorage.getItem('tokenDetail')
+    if(tokenDetail && tokenDetail !== '') {
+      this.setState({
+        tokenDetail
+      })
+    } else {
+      this.setState({
+        tokenDetail: ''
+      })
+    }
+  }
+
+  logout = async () => {
+    localStorage.removeItem('tokenDetail')
+    this.props.history.replace('/login')
   }
 
   render(){
@@ -15,13 +35,25 @@ class Navbar extends React.Component {
       tokenDetail
     } = this.state
 
-    const isLogin = tokenDetail!==undefined && tokenDetail.token!==undefined
     return (
       <div className="navbar">
-      {/* <div className={isLogin?"navbar":""}> */}
-          <a href="/">NETFLUX</a>
+        <a href="/">NETFLUX</a>
+        {
+          (tokenDetail !== '') ? 
+          <div>
+            Banyawat
+            <button
+              style={{
+                color: 'black'
+              }}
+              onClick={this.logout}
+            >
+              Logout
+            </button>
+          </div>
+        : ''}
       </div>
     )
   }
 }
-export default Navbar
+export default withRouter(Navbar)
