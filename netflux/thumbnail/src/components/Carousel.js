@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Carousel } from 'antd'
 import Arrow from './Arrow'
+import { WRAPPER_URL } from '../config'
 
 class CustomCarousel extends Component {
   constructor(props) {
@@ -27,9 +28,9 @@ class CustomCarousel extends Component {
         >
           {
             content.map((item, key) => (
-              <div key={key}>
-                <img src={item.url} alt=""></img>
-              </div>
+              <a key={key} href={`${WRAPPER_URL}/theater?id=${item.id}`}>
+                <img src={item.imgUrl} alt=""></img>
+              </a>
             ))
           }
         </Carousel>
