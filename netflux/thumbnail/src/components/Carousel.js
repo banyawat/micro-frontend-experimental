@@ -1,25 +1,47 @@
-import React from 'react'
-import Slider from 'react-slick'
+import React, { Component } from 'react'
+import { Carousel } from 'antd'
+import Arrow from './Arrow'
+import { WRAPPER_URL } from '../config'
 
-const settings = {
-  dots: false,
-  infinite: true,
-  speed: 500,
-  arrows: true,
-  slidesToShow: 4,
-  className: 'carousel-item'
+class CustomCarousel extends Component {
+  constructor(props) {
+    super(props)
+    
+    this.carousel = React.createRef()
+  }
+
+  render() {
+    const { content } = this.props
+    return(
+      <div className="carousel">
+        <Arrow
+          direction="left"
+          className="left"
+          onClick={() => {this.carousel.prev()}}
+        />
+        <Carousel 
+          dots={false}
+          infinite
+          slidesToShow={5}
+          className="carousel-item"
+          ref={node => (this.carousel = node)}
+        >
+          {
+            content.map((item, key) => (
+              <a key={key} href={`${WRAPPER_URL}/theater?id=${item.id}`}>
+                <img src={item.imgUrl} alt=""></img>
+              </a>
+            ))
+          }
+        </Carousel>
+        <Arrow 
+          direction="right" 
+          className="right"
+          onClick={() => {this.carousel.next()}}
+        />
+      </div>
+    )
+  }
 }
 
-const Carousel = ({ content }) => (
-  <Slider {...settings}>
-    {
-      content.map(item => (
-        <div>
-          <img src={item.url} alt=""></img>
-        </div>
-      ))
-    }
-  </Slider>
-)
-
-export default Carousel
+export default CustomCarousel

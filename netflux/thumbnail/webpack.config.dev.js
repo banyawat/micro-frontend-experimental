@@ -1,22 +1,9 @@
 const webpack = require('webpack')
+const defaultConfig = require('./default.config')
 
 module.exports = {
   entry: './src/app.js',
-  module: {
-    rules: [
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        use: {
-          loader: "babel-loader"
-        }
-      },
-      {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
-      }
-    ]
-  },
+  module: defaultConfig,
   plugins: [
     new webpack.HotModuleReplacementPlugin()
   ],
