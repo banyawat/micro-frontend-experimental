@@ -1,0 +1,16 @@
+@import '~antd/dist/antd.min.css';
+
+.back-to-home-bar {
+  position: absolute;
+  width: 100%;
+  top: 10;
+  left: 10;
+  height: 95px;
+  background: black;
+}
+
+.back-to-home-button {
+  width: 200px;
+  height: 200px;
+  font-size: 4em;
+}
