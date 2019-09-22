@@ -5,8 +5,14 @@
   width: 100%;
   top: 10;
   left: 10;
-  height: 95px;
-  background: black;
+  height: 90px;
+  opacity: 0;
+  transition-duration: 0.5s;
+}
+
+.back-to-home-bar:hover {
+  opacity: 1;
+  background: linear-gradient(180deg, rgba(2,0,36,1) 0%, rgba(0,0,0,1) 0%, rgba(0,212,255,0) 100%);
 }
 
 .back-to-home-button {
