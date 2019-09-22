@@ -1,9 +1,25 @@
+.main-layout {
+  background: #141414;
+  min-height: 100vh;
+}
+
+.main-layout > .container {
+  padding: 10px 60px;
+  color: white;
+}
+
 .navbar {
-  height: 30px;
+  height: 75px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 15px;
+  padding: 25px 60px;
   background: #000;
   color: #fff;
+}
+
+.navbar > a {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: red;
 }
