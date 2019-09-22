@@ -5,6 +5,7 @@ import PropTypes from 'prop-types';
 import LoginComponent from './Login'
 
 class MicroLogin extends HTMLElement {
+  
   connectedCallback() {
     this._innerHTML = this.innerHTML;
     this.mount();
@@ -12,6 +13,11 @@ class MicroLogin extends HTMLElement {
 
   disconnectedCallback() {
     this.unmount();
+  }
+
+  update() {
+    this.unmount();
+    this.mount();
   }
 
   mount() {
@@ -30,7 +36,11 @@ class MicroLogin extends HTMLElement {
       .filter(key => events[key] === PropTypes.func)
       .reduce((prev, curr) => ({
         ...prev,
-        [curr]: args => this.dispatchEvent(new Event(curr, {...args}))
+        [curr]: args => {
+          console.log('args 000000')
+          console.log(args)
+          return this.dispatchEvent(new CustomEvent(curr, {detail:{...args}}))
+        }
       }), {});
   }
 }

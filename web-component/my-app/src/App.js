@@ -16,7 +16,7 @@ class App extends React.Component {
   }
 
   onLogin = (event) => {
-    console.log("onLogin Enter:", event);
+    console.log("onLogin Enter:", event.detail);
   }
 
   render(){
