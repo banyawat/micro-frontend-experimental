@@ -3,6 +3,11 @@
   min-height: 100vh;
 }
 
+.main-layout > .container {
+  padding: 10px 60px;
+  color: white;
+}
+
 .navbar {
   height: 75px;
   display: flex;
