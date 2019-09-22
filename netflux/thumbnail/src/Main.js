@@ -1,6 +1,5 @@
 import React from 'react'
 import './styles/index.css'
-import { Button } from 'antd'
 import THUMB_DATA from './mock/thumb'
 import Carousel from './components/Carousel'
 
