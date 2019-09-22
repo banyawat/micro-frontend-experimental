@@ -1,9 +1,15 @@
 .navbar {
-  height: 30px;
+  height: 35px;
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 15px;
+  padding: 25px;
   background: #000;
   color: #fff;
+}
+
+.navbar > a {
+  font-size: 1.8em;
+  font-weight: bold;
+  color: red;
 }

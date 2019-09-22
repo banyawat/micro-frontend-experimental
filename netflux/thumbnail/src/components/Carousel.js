@@ -28,7 +28,7 @@ class CustomCarousel extends Component {
         >
           {
             content.map((item, key) => (
-              <a key={key} href={`${WRAPPER_URL}/theater?id=${item.id}`}>
+              <a key={key} href={`${WRAPPER_URL}/theater/${item.id}`}>
                 <img src={item.imgUrl} alt=""></img>
               </a>
             ))
