@@ -20,7 +20,7 @@ class Login extends React.Component {
 
   onLogin = (event) => {
     console.log('Have recieved event:',event)
-    localStorage.setItem('tokenDetail', event.detail)
+    localStorage.setItem('tokenDetail', event.detail.token)
     if(event.detail.token!==undefined) {
         this.props.history.push('/')
     }

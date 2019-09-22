@@ -17,8 +17,9 @@ class Navbar extends React.Component {
 
     const isLogin = tokenDetail!==undefined && tokenDetail.token!==undefined
     return (
-      <div className={isLogin?"navbar":""}>
-        {isLogin && <a href="/">NETFLUX</a>}
+      <div className="navbar">
+      {/* <div className={isLogin?"navbar":""}> */}
+          <a href="/">NETFLUX</a>
       </div>
     )
   }
