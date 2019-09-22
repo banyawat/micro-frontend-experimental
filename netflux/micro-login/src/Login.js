@@ -27,15 +27,15 @@ class HorizontalLoginForm extends React.Component {
     this.props.form.validateFields((err, values) => {
       if (!err) {
         console.log('Received values of form: ', values);
-        console.log(this.props)
         const {
           username,
           password,
         } = values
         if(username && username==='admin' && password && password==='1234'){
+          this.props.onLogin({loginStatus:'success'})
           message.success('Login success!')
         }else{
-          this.props.onLogin()
+          this.props.onLogin({loginStatus:'failure'})
           message.error('Login failure!')
         }
       }

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 import LoginComponent from './Login'
 
-class XSearch extends HTMLElement {
+class MicroLogin extends HTMLElement {
   connectedCallback() {
     this._innerHTML = this.innerHTML;
     this.mount();
@@ -18,13 +18,7 @@ class XSearch extends HTMLElement {
     const name = this.getAttribute('name');
     const events = LoginComponent.propTypes ? LoginComponent.propTypes : {};
 
-    const props = {
-      value:this.getAttribute('name'),
-      events:this.getEvents(events),
-      eventsBooleam:events.onLogin === PropTypes.string,
-    }
-
-    render(<LoginComponent name={name} {...props} test={props}/>, this);
+    render(<LoginComponent name={name} {...this.getEvents(events)}/>, this);
   }
 
   unmount() {
@@ -36,10 +30,8 @@ class XSearch extends HTMLElement {
       .filter(key => events[key] === PropTypes.func)
       .reduce((prev, curr) => ({
         ...prev,
-        [`${curr}Test`]:curr,
-        [curr]: args => 
-        this.dispatchEvent(new CustomEvent(ev, { ...args }))
+        [curr]: args => this.dispatchEvent(new Event(curr, {...args}))
       }), {});
   }
 }
-customElements.define('x-search', XSearch);
+customElements.define('micro-login', MicroLogin);
