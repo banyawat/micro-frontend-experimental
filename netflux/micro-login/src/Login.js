@@ -9,17 +9,16 @@ import {
   Form, 
   Icon, 
   Input, 
-  Button 
+  Button,
+  Checkbox
 } from 'antd';
 
-function hasErrors(fieldsError) {
-  return Object.keys(fieldsError).some(field => fieldsError[field]);
-}
-
-class HorizontalLoginForm extends React.Component {
+class NormalLoginForm extends React.Component {
   componentDidMount() {
     // To disabled submit button at the beginning.
     this.props.form.validateFields();
+    const tokenDetail = localStorage.getItem('tokenDetail')
+    console.log('Recieved tokenDetail :',tokenDetail)
   }
 
   handleSubmit = e => {
@@ -32,7 +31,7 @@ class HorizontalLoginForm extends React.Component {
           password,
         } = values
         if(username && username==='admin' && password && password==='1234'){
-          this.props.onLogin({loginStatus:'success'})
+          this.props.onLogin({loginStatus:'success',token:'1234567890',user:'admin'})
           message.success('Login success!')
         }else{
           this.props.onLogin({loginStatus:'failure'})
@@ -43,55 +42,61 @@ class HorizontalLoginForm extends React.Component {
   };
 
   render() {
-    const { getFieldDecorator, getFieldsError, getFieldError, isFieldTouched } = this.props.form;
-
-    // Only show error after a field is touched.
-    const usernameError = isFieldTouched('username') && getFieldError('username');
-    const passwordError = isFieldTouched('password') && getFieldError('password');
+    const { getFieldDecorator } = this.props.form;
     return (
-      <Form layout="inline" onSubmit={this.handleSubmit}>
-        <Form.Item validateStatus={usernameError ? 'error' : ''} help={usernameError || ''}>
-          {getFieldDecorator('username', {
-            rules: [{ required: true, message: 'Please input your username!' }],
-          })(
-            <Input
+      <div id='components-form-demo-normal-login'>
+        <Form onSubmit={this.handleSubmit} className="login-form">
+          <Form.Item>
+            {getFieldDecorator('username', {
+              rules: [{ required: true, message: 'Please input your username!' }],
+            })(
+              <Input
               prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
               placeholder="Username"
-            />,
-          )}
-        </Form.Item>
-        <Form.Item validateStatus={passwordError ? 'error' : ''} help={passwordError || ''}>
-          {getFieldDecorator('password', {
-            rules: [{ required: true, message: 'Please input your Password!' }],
-          })(
-            <Input
+              />,
+              )}
+          </Form.Item>
+          <Form.Item>
+            {getFieldDecorator('password', {
+              rules: [{ required: true, message: 'Please input your Password!' }],
+            })(
+              <Input
               prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
               type="password"
               placeholder="Password"
-            />,
-          )}
-        </Form.Item>
-        <Form.Item>
-          <Button type="primary" htmlType="submit" disabled={hasErrors(getFieldsError())}>
-            Log in
-          </Button>
-        </Form.Item>
-      </Form>
+              />,
+              )}
+          </Form.Item>
+          <Form.Item>
+            {getFieldDecorator('remember', {
+              valuePropName: 'checked',
+              initialValue: true,
+            })(<Checkbox>Remember me</Checkbox>)}
+            <a className="login-form-forgot" href="">
+              Forgot password
+            </a>
+            <Button type="primary" htmlType="submit" className="login-form-button">
+              Log in
+            </Button>
+            Or <a href="">register now!</a>
+          </Form.Item>
+        </Form>
+      </div>
     );
   }
 }
 
-const WrappedHorizontalLoginForm = Form.create({ name: 'horizontal_login' })(HorizontalLoginForm);
+const WrappedNormalLoginForm = Form.create({ name: 'normal_login' })(NormalLoginForm);
 
 
-WrappedHorizontalLoginForm.propTypes = {
+WrappedNormalLoginForm.propTypes = {
   name: PropTypes.string,
   onLogin: PropTypes.func,
 }
 
-WrappedHorizontalLoginForm.defaultProps = {
+WrappedNormalLoginForm.defaultProps = {
   name: "Chris",
   onLogin: () => {}
 }
 
-export default WrappedHorizontalLoginForm
+export default WrappedNormalLoginForm

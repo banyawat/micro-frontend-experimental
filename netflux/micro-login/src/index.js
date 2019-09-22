@@ -36,11 +36,7 @@ class MicroLogin extends HTMLElement {
       .filter(key => events[key] === PropTypes.func)
       .reduce((prev, curr) => ({
         ...prev,
-        [curr]: args => {
-          console.log('args 000000')
-          console.log(args)
-          return this.dispatchEvent(new CustomEvent(curr, {detail:{...args}}))
-        }
+        [curr]: args => this.dispatchEvent(new CustomEvent(curr, {detail:{...args}}))
       }), {});
   }
 }
