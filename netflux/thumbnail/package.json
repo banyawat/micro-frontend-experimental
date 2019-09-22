@@ -14,8 +14,9 @@
   },
   "scripts": {
     "start": "npm run build && serve -l 5002 dist",
-    "dev": "webpack-dev-server --mode development --config webpack.config.dev.js",
-    "build": "webpack --mode development"
+    "dev": "yarn build && yarn move-html-to-dist && webpack-dev-server --mode development --config webpack.config.dev.js",
+    "build": "webpack --mode development",
+    "move-html-to-dist": "cp index.html dist/"
   },
   "eslintConfig": {
     "extends": "react-app"
