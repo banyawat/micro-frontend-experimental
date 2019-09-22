@@ -23,3 +23,7 @@
   font-weight: bold;
   color: red;
 }
+
+.login {
+	background-image: url(resource/images/netflix-background.jpg);
+}

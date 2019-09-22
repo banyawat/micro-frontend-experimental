@@ -2,6 +2,13 @@
     color: brown;
 }
 
+.centered {
+    position: fixed; /* or absolute */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 #components-form-demo-normal-login .login-form {
     max-width: 300px;
 }
