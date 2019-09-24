@@ -1,5 +1,9 @@
+h1, h2, h3 {
+  color: white;
+}
+
 .main-layout {
-	background-image: url(resource/images/netflix-background.jpg);
+	background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(resource/images/netflix-background.jpg);
   min-height: 100vh;
 }
 
