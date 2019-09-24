@@ -7,6 +7,7 @@ class Navbar extends React.Component {
   }
 
   componentDidMount () {
+    this.checkSession()
     this.props.history.listen(() => {
       this.checkSession()
     })
