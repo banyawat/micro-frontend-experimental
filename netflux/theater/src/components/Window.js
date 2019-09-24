@@ -1,10 +1,13 @@
 import React from 'react'
+import THEATER from '../mock/theater'
 
-const Window = () => (
+const Window = ({
+  movieID = 2
+}) => (
   <iframe 
     width="100%" 
     height="100%" 
-    src="https://www.youtube.com/embed/O-bXep9O6o4"
+    src={THEATER[movieID - 1].url}
     frameBorder="0" 
     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
     allowFullScreen

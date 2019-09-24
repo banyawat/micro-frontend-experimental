@@ -3,7 +3,7 @@ import './styles/index.css'
 import Window from './components/Window'
 import BackButton from './components/BackButton'
 
-const Main = () => {
+const Main = ({ movieID }) => {
   return (
     <div style={{
       position: 'relative',
@@ -11,7 +11,7 @@ const Main = () => {
       height: '100vh'
     }}>
       <BackButton />
-      <Window />
+      <Window movieID={movieID} />
     </div>
   )}
 

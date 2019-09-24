@@ -2,7 +2,7 @@ import React from 'react'
 
 const Theater = ({ match }) => (
   <div>
-    <theater-el></theater-el>
+    <theater-el movieID={match.params.id}></theater-el>
   </div>
 )
 

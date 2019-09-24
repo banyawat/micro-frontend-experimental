@@ -4,7 +4,8 @@ import Main from './Main'
 
 class TheaterRenderer extends HTMLElement {
   connectedCallback() {
-    ReactDOM.render(<Main />, this);
+    const movieID = this.getAttribute('movieID')
+    ReactDOM.render(<Main movieID={movieID} />, this);
   }
 }
 customElements.define('theater-el', TheaterRenderer)
