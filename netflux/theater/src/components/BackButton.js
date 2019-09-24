@@ -7,7 +7,7 @@ const BackButton = () => (
       <Icon
         type="left" 
       />
-      กลับไปหน้าแรก
+      Back to Home
     </a>
   </div>
 )

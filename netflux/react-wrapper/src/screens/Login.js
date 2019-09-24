@@ -1,5 +1,6 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
+import MainLayout from '../Layout/MainLayout'
 
 class Login extends React.Component {
   state = {
@@ -32,9 +33,12 @@ class Login extends React.Component {
   render(){
     return (
       <div className="login">
-        <micro-login ref={this.login}/>
+        <MainLayout>
+          <micro-login ref={this.login}/>
+        </MainLayout>
       </div>
     )
   }
 }
+
 export default withRouter(Login)

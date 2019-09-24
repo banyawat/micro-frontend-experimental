@@ -1,7 +1,7 @@
 import React from 'react'
 import NavBar from '../components/NavBar'
 
-const Layout = ({ children }) => (
+const MainLayout = ({ children }) => (
   <div className="main-layout">
     <header>
       <NavBar />
@@ -12,4 +12,4 @@ const Layout = ({ children }) => (
   </div>
 )
 
-export default Layout
+export default MainLayout

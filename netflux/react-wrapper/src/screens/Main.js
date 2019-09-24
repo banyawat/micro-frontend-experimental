@@ -1,9 +1,10 @@
 import React from 'react'
+import MainLayout from '../Layout/MainLayout'
 
 const Main = () => (
-  <div>
+  <MainLayout>
     <thumbnail-el></thumbnail-el>
-  </div>
+  </MainLayout>
 )
 
 export default Main
