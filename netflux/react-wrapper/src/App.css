@@ -2,6 +2,10 @@
   color: #E53631;
 }
 
+span {
+  color: #4B4D4F;
+}
+
 h1, h2, h3 {
   color: white;
 }
@@ -33,11 +37,11 @@ h1, h2, h3 {
 }
 
 a {
-  color: #E53631;
+  color: #4B4D4F;
 }
 
 a:hover {
-  color: rgb(230, 130, 127);
+  color: #4B4D4F;
 }
 
 .ant-btn.login-form-button.ant-btn-primary {
