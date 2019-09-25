@@ -1,3 +1,7 @@
+.main-layout a {
+  color: #E53631;
+}
+
 h1, h2, h3 {
   color: white;
 }
@@ -25,5 +29,18 @@ h1, h2, h3 {
 .navbar > a {
   font-size: 1.8em;
   font-weight: bold;
-  color: red;
+  color: #E53631;
+}
+
+a {
+  color: #E53631;
+}
+
+a:hover {
+  color: rgb(230, 130, 127);
+}
+
+.ant-btn.login-form-button.ant-btn-primary {
+  background:#E53631;
+  border: none;
 }
