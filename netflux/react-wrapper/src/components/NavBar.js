@@ -52,9 +52,7 @@ class Navbar extends React.Component {
           <div>
             Banyawat
             <button
-              style={{
-                color: 'black'
-              }}
+              className="ant-btn ant-btn-primary logout"
               onClick={this.logout}
             >
               Logout

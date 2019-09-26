@@ -2,7 +2,7 @@
   color: #E53631;
 }
 
-span {
+.login-footer > div, .ant-checkbox-wrapper.ant-checkbox-wrapper-checked  {
   color: #4B4D4F;
 }
 
@@ -37,14 +37,23 @@ h1, h2, h3 {
 }
 
 a {
-  color: #4B4D4F;
+  color: #E53631;
 }
 
 a:hover {
-  color: #4B4D4F;
+  color: rgb(226, 127, 124);
 }
 
-.ant-btn.login-form-button.ant-btn-primary {
+.ant-btn, .ant-btn-primary, .login-form-button {
   background:#E53631;
+  color: white;
   border: none;
+}
+
+.ant-btn:hover {
+  background: rgb(226, 127, 124);
+}
+
+.logout {
+  margin-left: 10px;
 }
