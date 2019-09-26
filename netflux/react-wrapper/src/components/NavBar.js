@@ -8,9 +8,13 @@ class Navbar extends React.Component {
 
   componentDidMount () {
     this.checkSession()
-    this.props.history.listen(() => {
+    this.unlisten = this.props.history.listen(() => {
       this.checkSession()
     })
+  }
+
+  componentWillUnmount () {
+    this.unlisten()
   }
 
   checkSession = () => {
@@ -23,11 +27,15 @@ class Navbar extends React.Component {
       this.setState({
         tokenDetail: ''
       })
+      if (this.props.match.path !== '/login') {
+        this.props.history.replace('/login')
+      }
     }
   }
 
   logout = async () => {
     localStorage.removeItem('tokenDetail')
+    this.unlisten()
     this.props.history.replace('/login')
   }
 

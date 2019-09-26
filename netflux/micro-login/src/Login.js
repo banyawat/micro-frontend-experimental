@@ -46,6 +46,7 @@ class NormalLoginForm extends React.Component {
     return (
       <div id='components-form-demo-normal-login' className='centered'>
         <Form onSubmit={this.handleSubmit} className="login-form">
+          <h1>เข้าสู่ระบบ</h1>
           <Form.Item>
             {getFieldDecorator('username', {
               rules: [{ required: true, message: 'Please input your username!' }],
@@ -68,18 +69,25 @@ class NormalLoginForm extends React.Component {
               )}
           </Form.Item>
           <Form.Item>
+            <Button type="primary" htmlType="submit" className="login-form-button">
+              Log in
+            </Button>
             {getFieldDecorator('remember', {
               valuePropName: 'checked',
               initialValue: true,
             })(<Checkbox>Remember me</Checkbox>)}
             <a className="login-form-forgot" href="">
-              Forgot password
+              หากต้องการความช่วยเหลือ
             </a>
-            <Button type="primary" htmlType="submit" className="login-form-button">
-              Log in
-            </Button>
-            Or <a href="">register now!</a>
           </Form.Item>
+          <div className="login-footer">
+            <div>
+              <a>เข้าสู่ระบบด้วย Facebook</a>
+            </div>
+            <div>
+              หากยังใหม่กับการใช้ Netflix <a>สมัครลงทะเบียนตอนนี้</a>
+            </div>
+          </div>
         </Form>
       </div>
     );
