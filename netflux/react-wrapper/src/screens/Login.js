@@ -1,6 +1,7 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
 import MainLayout from '../Layout/MainLayout'
+import MicroWarper from '../components/MicroWarper'
 
 class Login extends React.Component {
   state = {
@@ -8,15 +9,6 @@ class Login extends React.Component {
 
   constructor(props) {
     super(props)
-    this.login = React.createRef();
-  }
-  
-  componentDidMount() {
-    this.login.current.addEventListener("onLogin", this.onLogin);
-  }
-  
-  componentWillUnmount() {
-    this.login.current.removeEventListener("onLogin", this.onLogin);
   }
 
   onLogin = (event) => {
@@ -25,16 +17,15 @@ class Login extends React.Component {
     if(event.detail.token!==undefined) {
         this.props.history.push('/')
     }
-    this.setState({
-      tokenDetail:event.detail
-    })
   }
 
   render(){
     return (
       <div className="login">
         <MainLayout>
-          <micro-login ref={this.login}/>
+          <MicroWarper test1='test1' test2={2} test3={true} onLogin={this.onLogin}>
+            <micro-login/>
+          </MicroWarper>
         </MainLayout>
       </div>
     )
