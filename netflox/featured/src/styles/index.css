@@ -2,6 +2,7 @@
 
 .featured-label {
   position: relative;
+  width: 500px;
   bottom: 200px;
   left: 30px;
 }
