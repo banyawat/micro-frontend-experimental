@@ -1,0 +1,14 @@
+tell application "Terminal"
+    activate
+    tell application "System Events" to keystroke "t" using command down
+    repeat while contents of selected tab of window 1 starts with linefeed
+        delay 0.1
+    end repeat
+    do script "cd /Users/banyawatkaewsamer/SourceTreeProjects/micro-frontend-experimental/netflox/react-wrapper && yarn start" in window 1
+
+    tell application "System Events" to keystroke "t" using command down
+    repeat while contents of selected tab of window 2 starts with linefeed
+        delay 0.1
+    end repeat
+    do script "cd /Users/banyawatkaewsamer/SourceTreeProjects/micro-frontend-experimental/netflox/featured && yarn start" in window 2
+end
