@@ -3,7 +3,7 @@ import { Icon } from 'antd'
 
 const Arrow = ({
   className,
-  direction, 
+  direction,
   onClick = () => {}
 }) => (
   <button 

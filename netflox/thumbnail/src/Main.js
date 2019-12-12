@@ -12,7 +12,15 @@ const Main = () => {
       <a href={url}>
         <h2>ยอดฮิต</h2>
       </a>
-      <Carousel content={THUMB_DATA} />
+      <Carousel content={THUMB_DATA.ACTION} />
+      <a href={url}>
+        <h2>สำหรับ Banyawat</h2>
+      </a>
+      <Carousel content={THUMB_DATA.FORYOU} />
+      <a href={url}>
+        <h2>ทีวีดราม่าจาก อเมริกา</h2>
+      </a>
+      <Carousel content={THUMB_DATA.AMERICA_SERIES} />
     </div>
   )}
 
