@@ -46,7 +46,7 @@ class Navbar extends React.Component {
 
     return (
       <div className="navbar">
-        <a href="/">NETFLUX</a>
+        <a href="/">NETFLOX</a>
         {
           (tokenDetail !== '') ? 
           <div>
