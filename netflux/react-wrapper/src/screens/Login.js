@@ -1,7 +1,7 @@
 import React from 'react'
 import { withRouter } from 'react-router-dom'
 import MainLayout from '../Layout/MainLayout'
-import MicroWarper from '../components/MicroWarper'
+import MicroWrapper from '../components/MicroWrapper'
 
 class Login extends React.Component {
   state = {
@@ -23,9 +23,9 @@ class Login extends React.Component {
     return (
       <div className="login">
         <MainLayout>
-          <MicroWarper test1='test1' test2={2} test3={true} onLogin={this.onLogin}>
+          <MicroWrapper test1='test1' test2={2} test3={true} onLogin={this.onLogin}>
             <micro-login/>
-          </MicroWarper>
+          </MicroWrapper>
         </MainLayout>
       </div>
     )

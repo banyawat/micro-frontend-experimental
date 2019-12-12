@@ -1,6 +1,6 @@
 import React from 'react'
 
-class MicroWarper extends React.Component{
+class MicroWrapper extends React.Component{
     constructor(props) {
       super(props)
       this.microRef = React.createRef();
@@ -39,4 +39,4 @@ class MicroWarper extends React.Component{
     }
 }
 
-export default MicroWarper
+export default MicroWrapper
