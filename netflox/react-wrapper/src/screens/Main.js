@@ -2,8 +2,11 @@ import React from 'react'
 import MainLayout from '../Layout/MainLayout'
 
 const Main = () => (
-  <MainLayout>
-    <featured-el></featured-el>
+  <MainLayout
+    banner={
+      <featured-el></featured-el>
+    }
+  >
     <thumbnail-el></thumbnail-el>
   </MainLayout>
 )

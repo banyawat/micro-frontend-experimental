@@ -1,1 +1,26 @@
 @import '~antd/dist/antd.min.css';
+
+.featured-label {
+  position: relative;
+  bottom: 200px;
+  left: 30px;
+}
+
+.featured-label h2 {
+  color: #fff;
+  font-size: 3em;
+}
+
+.featured-label p {
+  color: #fff;
+  width: 400px;
+}
+
+.featured-label h3 {
+  color: #fff;
+}
+
+.featured-container {
+  position: relative;
+  width: 100%;
+}
